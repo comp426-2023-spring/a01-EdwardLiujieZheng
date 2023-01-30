@@ -34,8 +34,9 @@ fs.readFile('./public/index.html', 'utf-8', (err, data) => {
 // 2. set a header with content type `text/html`, and 
 // 3. end with the data that you are reading in from ./public/index.html.
 const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    return res.end(content);
+    res.statusCode = 200;
+    res.setHeader('Content-type', 'text/html')
+    res.end(content);
 })
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
