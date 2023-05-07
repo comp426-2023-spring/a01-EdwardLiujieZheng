@@ -1,101 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>  
-        	<meta charset="UTF-8">
-        	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        	<title>Alphabet</title>
-    	</head>
-    	<body>
-        	<div>
-            		<h1>Alphabet table</h1>
-            		<table>
-				<thead>
-  					<tr>
-    						<th>Column 0</th><th>Column 1</th>
-  					</tr>
-				</thead>
-				<tbody>
-  					<tr>
-    						<td>A</td><td></td>
-  					</tr>
-  					<tr>
-    						<td></td><td>B</td>
-  					</tr>
-  					<tr>
-    						<td></td><td>C</td>
-  					</tr>
-  					<tr>
-    						<td></td><td>D</td>
-  					</tr>
-  					<tr>
-    						<td>E</td><td></td>
-  					</tr>
-  					<tr>
-    						<td>F</td><td></td>
-  					</tr>
-  					<tr>
-    						<td></td><td>G</td>
-  					</tr>
-  					<tr>
-    						<td>H</td><td></td>
-  					</tr>
-					<tr>
-    						<td>I</td><td></td>
-  					</tr>
-					<tr>
-    						<td>J</td><td></td>
-  					</tr>
-					<tr>
-    						<td>K</td><td></td>
-  					</tr>
-					<tr>
-    						<td>L</td><td></td>
-  					</tr>
-					<tr>
-    						<td>M</td><td></td>
-  					</tr>
-					<tr>
-    						<td>N</td><td></td>
-  					</tr>
-					<tr>
-    						<td>O</td><td></td>
-  					</tr>
-					<tr>
-    						<td>P</td><td></td>
-  					</tr>
-					<tr>
-    						<td>Q</td><td></td>
-  					</tr>
-					<tr>
-    						<td>R</td><td></td>
-  					</tr>
-					<tr>
-    						<td>S</td><td></td>
-  					</tr>
-					<tr>
-    						<td>T</td><td></td>
-  					</tr>
-					<tr>
-    						<td>U</td><td></td>
-  					</tr>
-					<tr>
-    						<td>V</td><td></td>
-  					</tr>
-					<tr>
-    						<td>W</td><td></td>
-  					</tr>
-					<tr>
-    						<td>X</td><td></td>
-  					</tr>
-					<tr>
-    						<td>Y</td><td></td>
-  					</tr>
-					<tr>
-    						<td>Z</td><td></td>
-  					</tr>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">Alphabet Table</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column 0</th>
+                    <th>Column 1</th>
+                </tr>
+            </thead>
+            <tbody id="alphabetTableBody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const alphabetTableBody = document.getElementById('alphabetTableBody');
+        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-				</tbody>
-			</table>
-        	</div>
-    	</body>
+        alphabet.forEach((letter, index) => {
+            const row = document.createElement('tr');
+            const cell0 = document.createElement('td');
+            const cell1 = document.createElement('td');
+
+            cell0.textContent = letter;
+            cell1.textContent = index % 2 === 1 ? letter : '';
+
+            row.appendChild(cell0);
+            row.appendChild(cell1);
+            alphabetTableBody.appendChild(row);
+        });
+    </script>
+</body>
 </html>
