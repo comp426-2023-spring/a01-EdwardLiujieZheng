@@ -11,6 +11,7 @@ const port = argv.port == undefined ? 3000 : argv.port;
 fs.readFile('./public/index.html', 'utf-8', (err, content) => {
     if (err) return console.error(err);
 
+    // make server
     const server = http.createServer((req, res) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
