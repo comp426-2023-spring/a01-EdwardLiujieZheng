@@ -4,25 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alphabet</title>
-    <style>
-        table {
-            width: 50%;
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
 </head>
 <body>
     <div>
-        <h1 style="text-align: center;">Alphabet Table</h1>
+        <h1>Alphabet table</h1>
         <table>
             <thead>
                 <tr>
@@ -43,8 +28,11 @@
             const cell0 = document.createElement('td');
             const cell1 = document.createElement('td');
 
-            cell0.textContent = letter;
-            cell1.textContent = index % 2 === 1 ? letter : '';
+            if (index % 2 === 0) {
+                cell0.textContent = letter;
+            } else {
+                cell1.textContent = letter;
+            }
 
             row.appendChild(cell0);
             row.appendChild(cell1);
