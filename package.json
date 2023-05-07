@@ -1,5 +1,5 @@
 {
-  "name": "my-first-web-server",
+  "name": "toy-web-server",
   "version": "1.1.0",
   "description": "This assignment will help you get started working with Node.js by hacking your way through creating a webserver from scratch.",
   "main": "server.js",
